@@ -23,15 +23,15 @@ class Point:
         return (self.x**2 + self.y**2)**0.5 # square root of the sum of x and y squared
 
 
-def __gt__(self, other):
-    my_distance = self.distance_orig()
-    other_distance = other.distance_orig()
-    return  my_distance > other_distance
+    def __gt__(self, other):
+        my_distance = self.distance_orig()
+        other_distance = other.distance_orig()
+        return  my_distance > other_distance
 
-def __eq__(self, other):
-    my_distance = self.distance_orig()
-    other_distance = other.distance_orig()
-    return  my_distance == other_distance
+    def __eq__(self, other):
+        my_distance = self.distance_orig()
+        other_distance = other.distance_orig()
+        return  my_distance == other_distance
 
 
 # now we need to instantiate it!
@@ -56,11 +56,11 @@ for p in point:
     print(p)
 
 print(point)
-p = Point(3, 4)
+p_ = Point(3, 4)
 print(p.distance_orig()) # expect 5 answer
 
-p2 = Point(1,1)
-print(f"I am comparing p > p2: {p>p2}") # I expect to have TRUE
+p_2 = Point(1,1)
+print(f"I am comparing p > p2: {p_ > p_2}") # I expect to have TRUE
 print("the sorted list of points is:")
 point.sort()
 print(point)
