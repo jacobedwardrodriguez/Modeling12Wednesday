@@ -1,3 +1,10 @@
+"""
+point.py
+
+This module defines a 2D Point class with basic arithmetic and comparison operations.
+Includes example usage section that demonstrates creating and sorting random points.
+"""
+
 import random
 
 
@@ -19,19 +26,44 @@ class Point:
     def __repr__(self):
         return self. __str__() #use the same way of printing as str
 
+    """
+     Return an official string representation, same as __str__ here.
+     """
+
     def distance_orig(self):
         return (self.x**2 + self.y**2)**0.5 # square root of the sum of x and y squared
 
+    """
+           Calculate the Euclidean distance from the origin.
+           Returns:
+               float: Distance from the point (0, 0).
+           """
 
     def __gt__(self, other):
         my_distance = self.distance_orig()
         other_distance = other.distance_orig()
         return  my_distance > other_distance
 
+    """
+           Compare this Point with another Point based on distance from origin.
+           Args:
+               other (Point): Another point to compare against.
+           Returns:
+               bool: True if this point is farther from the origin than the other.
+           """
+
     def __eq__(self, other):
         my_distance = self.distance_orig()
         other_distance = other.distance_orig()
         return  my_distance == other_distance
+
+"""
+        Check equality based on distance from origin.
+        Args:
+            other (Point): Another point to compare against.
+        Returns:
+            bool: True if both points are equidistant from the origin.
+        """
 
 
 # now we need to instantiate it!
